@@ -22,11 +22,11 @@
 
   ARTISTS_ID3_DELIMITER = "/";
 
-  Program.version("0.0.1").option("-u, --username [username]", "Spotify Username (required)", null).option("-p, --password [password]", "Spotify Password (required)", null).option("-i, --uri [url / uri]", "Spotify URL / URI (Track / Album / Playlist)", null).option("-d, --directory [directory]", "Download Directory - Default: \"download\" folder within the same directory", getBaseDir()).option("-f, --folder [format]", "Save songs in single folder with the playlist name or specified path format - e.g. \"{artist.name}/{album.name}/{track.name}\"").option("--sa, --single-artist", "If multiple artist, uses just the first one on ID3 tags").option("--delimiter-path [delimiter]", "Set delimiter to separate multiple artist in paths").option("--delimiter-ID3 [delimiter]", "Set delimiter to separate multiple artist in ID3 tags").parse(process.argv);
+  Program.version("0.0.1").option("-u, --userid [userid]", "Facebook UserID (required)", null).option("-t, --token [access_token]", "Facebook Access Token (required)", null).option("-i, --uri [url / uri]", "Spotify URL / URI (Track / Album / Playlist)", null).option("-d, --directory [directory]", "Download Directory - Default: \"download\" folder within the same directory", getBaseDir()).option("-f, --folder [format]", "Save songs in single folder with the playlist name or specified path format - e.g. \"{artist.name}/{album.name}/{track.name}\"").option("--sa, --single-artist", "If multiple artist, uses just the first one on ID3 tags").option("--delimiter-path [delimiter]", "Set delimiter to separate multiple artist in paths").option("--delimiter-ID3 [delimiter]", "Set delimiter to separate multiple artist in ID3 tags").parse(process.argv);
 
   config = {
-    username: Program.username,
-    password: Program.password,
+    userid: Program.userid,
+    token: Program.token,
     uri: Program.uri,
     directory: Program.directory,
     folder: Program.folder,
@@ -37,8 +37,8 @@
     _artists_id3_delimiter: (ref1 = Program.delimiterID3) != null ? ref1 : ARTISTS_ID3_DELIMITER
   };
 
-  if ((config.username == null) || (config.password == null)) {
-    console.log("No username / password specified!".red);
+  if ((config.userid == null) || (config.token == null)) {
+    console.log("No UserID / Access Token specified!".red);
     return Program.outputHelp();
   }
 
