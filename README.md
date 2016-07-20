@@ -31,31 +31,32 @@ Download entire Spotify playlists, albums or tracks (directly from Spotify at 16
 
 	    -h, --help                   output usage information
 	    -V, --version                output the version number
-	    -u, --username [username]    Spotify Username (required)
-	    -p, --password [password]    Spotify Password (required)
+	    -u, --userid [userid]        Facebook UserID (required)
+	    -t, --token [access_token]   Facebook Access Token (required)
 	    -i, --uri 	   [URI / URL]   Spotify URI / URL for playlist, album or track - another valid input for this is "library"
 	    -d, --directory [directory]  Download Directory - Default: "download" folder within the same directory
 	    -f, --folder                 Create a sub-directory for playlist / album / library or specify folder hierarchy format
 
+Facebook User Id can be found using [Find My FB ID](http://findmyfbid.com)
 
 #### So
   If you wanted to download the playlist "Top 100 Hip-Hop Tracks on Spotify", you would use the following command:
 
-	node main.js -u yourusername -p yourpassword -i spotify:user:spotify:playlist:06KmJWiQhL0XiV6QQAHsmw
+	node main.js -u fbuserid -t access_token -i spotify:user:spotify:playlist:06KmJWiQhL0XiV6QQAHsmw
 	OR
-	node main.js -u yourusername -p yourpassword -i https://play.spotify.com/user/spotify/playlist/06KmJWiQhL0XiV6QQAHsmw
+	node main.js -u fbuserid -t access_token -i https://play.spotify.com/user/spotify/playlist/06KmJWiQhL0XiV6QQAHsmw
 
   If you wanted to download the album "Epiphany", you would use the following command:
 
-	node main.js -u yourusername -p yourpassword -i spotify:album:44Z1ZEmOyois0QoAgfUxrD
+	node main.js -u fbuserid -t access_token -i spotify:album:44Z1ZEmOyois0QoAgfUxrD
 	OR
-	node main.js -u yourusername -p yourpassword -i https://play.spotify.com/album/44Z1ZEmOyois0QoAgfUxrD
+	node main.js -u fbuserid -t access_token -i https://play.spotify.com/album/44Z1ZEmOyois0QoAgfUxrD
 
   If you wanted to download the track "2Pac I Get Around", you would use the following command:
 
-	node main.js -u yourusername -p yourpassword -i spotify:track:74kHlIr01X459gqsSdNilW
+	node main.js -u fbuserid -t access_token -i spotify:track:74kHlIr01X459gqsSdNilW
 	OR
-	node main.js -u yourusername -p yourpassword -i https://play.spotify.com/track/74kHlIr01X459gqsSdNilW
+	node main.js -u fbuserid -t access_token -i https://play.spotify.com/track/74kHlIr01X459gqsSdNilW
 
 #### Path format
 If you pass `-f` flag without specifying a file path template, it will save the
